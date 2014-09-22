@@ -8,6 +8,33 @@
 	<packaging>pom</packaging>
 	<version>0.0.4-SNAPSHOT</version>
 
+	<distributionManagement>
+		<!-- use the following if you're not using a snapshot version. -->
+		<repository>
+			<id>central</id>
+			<name>Nexus Central Releases</name>
+			<url>http://jenkins-nexus.intranet.truste-labs.com/nexus/content/repositories/releases</url>
+		</repository>
+		<!-- use the following if you ARE using a snapshot version. -->
+		<snapshotRepository>
+			<id>central</id>
+			<name>Nexus Central Snapshots</name>
+			<url>http://jenkins-nexus.intranet.truste-labs.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:ivanceras/parent.git</connection>
+		<developerConnection>scm:git:git@github.com:ivanceras/parent.git</developerConnection>
+		<url>https://github.com/ivanceras/parent.git</url>
+	</scm>
 
 
 	<properties>
