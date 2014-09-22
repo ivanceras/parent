@@ -16,19 +16,30 @@
 	</scm>
 
 	<distributionManagement>
-		<!-- use the following if you're not using a snapshot version. -->
 		<repository>
 			<id>central</id>
 			<name>Nexus Central Releases</name>
-			<url>http://jenkins-nexus.intranet.truste-labs.com/nexus/content/repositories/releases</url>
+			<url>http://jenkins-nexus/nexus/content/repositories/releases</url>
 		</repository>
-		<!-- use the following if you ARE using a snapshot version. -->
 		<snapshotRepository>
 			<id>central</id>
 			<name>Nexus Central Snapshots</name>
-			<url>http://jenkins-nexus.intranet.truste-labs.com/nexus/content/repositories/snapshots</url>
+			<url>http://jenkins-nexus/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+<!-- 	<distributionManagement> -->
+<!-- 		<repository> -->
+<!-- 			<id>central</id> -->
+<!-- 			<name>Nexus Central Releases</name> -->
+<!-- 			<url>https://oss.sonatype.org/content/repositories/releases/</url> -->
+<!-- 		</repository> -->
+<!-- 		<snapshotRepository> -->
+<!-- 			<id>central</id> -->
+<!-- 			<name>Nexus Central Snapshots</name> -->
+<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url> -->
+<!-- 		</snapshotRepository> -->
+<!-- 	</distributionManagement> -->
 
 	<licenses>
 		<license>
