@@ -1,9 +1,7 @@
 # kickstart travis.
 language: java
 
-# need to override travis 'install' since it will try gpg sign and fail.
-install: mvn clean install
-
-branches:
-  except:
-      - mvn-repo
+before_install:
+ - git clone https://github.com/ivanceras/parent.git
+ - cd ivanceras/parent
+ - mvn clean install
