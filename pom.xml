@@ -15,31 +15,31 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>Nexus Central Releases</name>
-			<url>http://jenkins-nexus/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>central</id>
-			<name>Nexus Central Snapshots</name>
-			<url>http://jenkins-nexus/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-	
 <!-- 	<distributionManagement> -->
 <!-- 		<repository> -->
 <!-- 			<id>central</id> -->
 <!-- 			<name>Nexus Central Releases</name> -->
-<!-- 			<url>https://oss.sonatype.org/content/repositories/releases/</url> -->
+<!-- 			<url>http://jenkins-nexus/nexus/content/repositories/releases</url> -->
 <!-- 		</repository> -->
 <!-- 		<snapshotRepository> -->
 <!-- 			<id>central</id> -->
 <!-- 			<name>Nexus Central Snapshots</name> -->
-<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url> -->
+<!-- 			<url>http://jenkins-nexus/nexus/content/repositories/snapshots</url> -->
 <!-- 		</snapshotRepository> -->
 <!-- 	</distributionManagement> -->
+	
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>Nexus Central Releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>central</id>
+			<name>Nexus Central Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<licenses>
 		<license>
