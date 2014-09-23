@@ -3,5 +3,7 @@ language: java
 
 before_install:
  - git clone https://github.com/ivanceras/parent.git
- - cd ivanceras/parent
+ - pwd
+ - ls
+ - cd parent
  - mvn clean install
