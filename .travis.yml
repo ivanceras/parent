@@ -8,3 +8,6 @@ before_install:
  - echo `pwd`
  - cd parent
  - mvn clean install -Dgpg.skip=true
+
+install: 
+ - mvn install -Dgpg.skip=true
