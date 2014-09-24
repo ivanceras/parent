@@ -15,29 +15,26 @@
 		<tag>HEAD</tag>
 	</scm>
 
+<!-- Uncoment when deploying to sonatype alone -->
 <!-- 	<distributionManagement> -->
-<!-- 		<repository> -->
-<!-- 			<id>central</id> -->
-<!-- 			<name>Nexus Central Releases</name> -->
-<!-- 			<url>http://jenkins-nexus/nexus/content/repositories/releases</url> -->
-<!-- 		</repository> -->
 <!-- 		<snapshotRepository> -->
-<!-- 			<id>central</id> -->
-<!-- 			<name>Nexus Central Snapshots</name> -->
-<!-- 			<url>http://jenkins-nexus/nexus/content/repositories/snapshots</url> -->
+<!-- 			<id>ossrh</id> -->
+<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
 <!-- 		</snapshotRepository> -->
+<!-- 		<repository> -->
+<!-- 			<id>ossrh</id> -->
+<!-- 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
+<!-- 		</repository> -->
 <!-- 	</distributionManagement> -->
-	
+
 	<distributionManagement>
 		<repository>
-			<id>central</id>
-			<name>Nexus Central Releases</name>
-			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+			<id>${releases.id}</id>
+			<url>${releases.url}</url>
 		</repository>
 		<snapshotRepository>
-			<id>central</id>
-			<name>Nexus Central Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<id>${snapshots.id}</id>
+			<url>${snapshots.url}</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -51,7 +48,7 @@
 	<developers>
 		<developer>
 			<name>Jovansonlee Cesar</name>
-			<email>ivanceras@gmail.com</email>
+			<email>ivanceras@gmail.com ${gpg.passphrase} ${snapshot.url}</email>
 			<organization>ivanceras</organization>
 			<organizationUrl>ivanceras.blogspot.com</organizationUrl>
 		</developer>
@@ -61,7 +58,6 @@
 
 	<properties>
 		<!-- Maven Plugins -->
-		<maven.javadoc.version>2.7</maven.javadoc.version>
 		<maven.surefire.version>2.8.1</maven.surefire.version>
 		<builder.helper.maven.version>1.8</builder.helper.maven.version>
 		<maven.eclipse.version>2.9</maven.eclipse.version>
@@ -85,14 +81,44 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven.javadoc.version}</version>
-				<configuration>
-					<show>public</show>
-					<nohelp>true</nohelp>
-				</configuration>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -109,6 +135,18 @@
 				<configuration>
 					<goals>deploy</goals>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 		</plugins>
