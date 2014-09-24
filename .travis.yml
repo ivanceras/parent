@@ -7,4 +7,4 @@ before_install:
  - ls
  - echo `pwd`
  - cd parent
- - mvn clean install
+ - mvn clean install -Dgpg.skip=true
