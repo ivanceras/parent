@@ -48,7 +48,7 @@
 	<developers>
 		<developer>
 			<name>Jovansonlee Cesar</name>
-			<email>ivanceras@gmail.com ${gpg.passphrase} ${snapshot.url}</email>
+			<email>ivanceras@gmail.com</email>
 			<organization>ivanceras</organization>
 			<organizationUrl>ivanceras.blogspot.com</organizationUrl>
 		</developer>
