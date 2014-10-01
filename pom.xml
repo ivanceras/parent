@@ -5,13 +5,13 @@
 	<artifactId>parent</artifactId>
 	<name>parent</name>
 	<packaging>pom</packaging>
-	<version>0.0.5</version>
+	<version>0.0.6-SNAPSHOT</version>
 
 	<scm>
 		<url>scm:git:https://github.com/ivanceras/parent.git</url>
 		<connection>scm:git:https://github.com/ivanceras/parent.git</connection>
 		<developerConnection>scm:git:https://github.com/ivanceras/parent.git</developerConnection>
-		<tag>parent-0.0.5</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 <!-- Uncoment when deploying to sonatype alone -->
