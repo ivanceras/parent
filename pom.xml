@@ -74,7 +74,7 @@
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
 
 		<!-- External Libraries -->
-		<gwtVersion>2.6.1</gwtVersion>
+		<gwtVersion>2.7.0</gwtVersion>
 		<junit.version>4.4</junit.version>
 	</properties>
 
