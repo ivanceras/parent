@@ -5,14 +5,14 @@
 	<artifactId>parent</artifactId>
 	<name>parent</name>
 	<packaging>pom</packaging>
-	<version>0.1.1</version>
+	<version>0.1.2-SNAPSHOT</version>
 	<url>https://github.com/ivanceras/parent</url>
 	<description>parent for ORM, fluentsql and commons.This is only for unifying the version of the 3 maven projects associated with ivanceras orm</description>
 	<scm>
 		<url>scm:git:https://github.com/ivanceras/parent.git</url>
 		<connection>scm:git:https://github.com/ivanceras/parent.git</connection>
 		<developerConnection>scm:git:https://github.com/ivanceras/parent.git</developerConnection>
-		<tag>parent-0.1.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<!-- Uncoment when deploying to sonatype alone -->
